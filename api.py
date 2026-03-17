@@ -63,7 +63,8 @@ X_scaled = scaler.transform(X).astype(np.float32)
 
 # ── Train XGBoost ─────────────────────────────────────────────
 print("Training XGBoost model...")
-model = xgb.XGBRegressor(n_estimators=300, learning_rate=0.05, max_depth=6, random_state=42, n_jobs=-1)
+model = xgb.XGBRegressor(n_estimators=300, learning_rate=0.05,
+                          max_depth=6, random_state=42, n_jobs=-1)
 model.fit(X[:train_end], y[:train_end], verbose=False)
 print("Model ready!")
 
